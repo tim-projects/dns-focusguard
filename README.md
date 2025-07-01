@@ -1,11 +1,9 @@
 # DNS FocusGuard - Freedom Through Focus
 
-## Why "FocusGuard"?
-This tool creates **digital freedom** by protecting your attention from distractions. Just as a life jacket restricts movement to grant swimming freedom, FocusGuard restricts distractions to grant:
+FocusGuard is a set of scripts to install, set up and configure a nameserver service on a server.
 
-1. **Cognitive Liberation** - Frees mental energy from distraction battles
-2. **ADHD Accommodation** - Creates external focus infrastructure your brain lacks
-3. **Intentional Living** - Ensures your digital space aligns with your priorities
+## Why "FocusGuard"?
+This tool creates **digital freedom** by protecting your attention from distractions. The idea is that by setting all your devices to use a central nameserver that you control, that you can block/allow websites in one place and cover all devices and internet connections.
 
 ## Configuring Your Focus Environment
 
@@ -51,10 +49,12 @@ sudo ./update-and-restart.sh
 
 ## Installation
 ```bash
-git clone https://github.com/yourusername/dns-focusguard.git
+git clone https://github.com/tim-projects/dns-focusguard.git
 cd dns-focusguard
 sudo ./install.sh
 ```
+
+After it's up and running, set your devices to the cname nameserver to use it.
 
 ## Maintenance
 ```bash
