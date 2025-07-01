@@ -1,0 +1,5 @@
+# Essential services
+google.com
+microsoft.com
+apple.com
+cloudflare.com

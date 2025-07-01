@@ -1,0 +1,5 @@
+# Job sites
+linkedin.com
+indeed.com
+glassdoor.com
+remoteok.io

@@ -1,0 +1,46 @@
+upstream:
+  default:
+    - 1.1.1.1
+    - 8.8.8.8
+
+blocking:
+  groups:
+    work:
+      blockLists:
+        - file:///app/lists/blocklists/social-media.txt
+        - file:///app/lists/blocklists/entertainment.txt
+        - file:///app/lists/blocklists/gaming.txt
+        - file:///app/lists/blocklists/time-wasters.txt
+      activation:
+        start: "08:00"
+        end: "20:00"
+    sleep:
+      blockLists:
+        - file:///app/lists/blocklists/social-media.txt
+        - file:///app/lists/blocklists/entertainment.txt
+        - file:///app/lists/blocklists/gaming.txt
+        - file:///app/lists/blocklists/time-wasters.txt
+        - file:///app/lists/allowlists/jobs.txt
+      activation:
+        start: "22:00"
+        end: "06:00"
+    free:
+      blockLists: []
+
+  defaultGroup: work
+
+whitelist:
+  - import: file:///app/lists/allowlists/essential.txt
+  - import: file:///app/lists/allowlists/jobs.txt
+  - import: file:///app/lists/allowlists/health.txt
+
+port: 53
+httpPort: 4000
+
+ratelimit: 15
+blockingTimeout: 500ms
+queryLog:
+  type: none
+
+logging:
+  level: error

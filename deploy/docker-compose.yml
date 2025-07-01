@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  focusguard:
+    image: spx01/blocky:latest
+    container_name: focusguard
+    restart: unless-stopped
+    volumes:
+      - /opt/dns-focusguard/config/blocky-config.yaml:/app/config.yaml
+      - /opt/dns-focusguard/lists:/app/lists
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
