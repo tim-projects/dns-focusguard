@@ -1,5 +1,7 @@
-# Entertainment
+# Entertainment (blocked during work hours)
 netflix.com
 hulu.com
 twitch.tv
 youtube.com
+disneyplus.com
+hbo.com

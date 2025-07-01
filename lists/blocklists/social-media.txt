@@ -1,6 +1,11 @@
-# Social Media
+# Social Media (with 10-second delay)
 facebook.com
 *.facebook.com
+instagram.com
+*.instagram.com
 tiktok.com
 *.tiktok.com
-instagram.com
+twitter.com
+*.twitter.com
+reddit.com
+*.reddit.com
