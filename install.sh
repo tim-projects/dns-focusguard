@@ -115,14 +115,15 @@ fi
 
 # Create installation directory
 echo "📂 Setting up DNS FocusGuard at /opt/dns-focusguard..."
-mkdir -p /opt/dns-focusguard
+mkdir -p /opt/dns-focusguard/config
 cd /opt/dns-focusguard || exit 1
 
 # Copy repository files
 echo "📦 Copying repository files..."
+#cp "$(realpath "${SCRIPT_DIR}/deploy/config/blocky-config.yaml")" /opt/dns-focusguard/config/
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cp -R "${SCRIPT_DIR}"/* /opt/dns-focusguard/ 2>/dev/null || \
-  cp -R /home/azureuser/git/dns-focusguard/* /opt/dns-focusguard/
+cp -R /home/azureuser/git/dns-focusguard/* /opt/dns-focusguard/
 
 chmod +x /opt/dns-focusguard/*.sh
 chmod +x /opt/dns-focusguard/deploy/scripts/*.sh

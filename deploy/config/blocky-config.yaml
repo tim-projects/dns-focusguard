@@ -1,43 +1,34 @@
-upstream:
-  default:
-    - 1.1.1.1
-    - 8.8.8.8
+upstreams:
+  groups:
+    default:
+      - 1.1.1.1
+      - 8.8.8.8
 
 blocking:
-  groups:
-    # Work hours: 8AM-8PM - Block entertainment only
+  denylists:
     work:
-      blockLists:
-        - file:///app/lists/blocklists/entertainment.txt
-      activation:
-        start: "08:00"
-        end: "20:00"
-      
-    # Evening/night: 8PM-10AM - Block social media & gaming
+      - file:///app/lists/blocklists/entertainment.txt
     night:
-      blockLists:
-        - file:///app/lists/blocklists/social-media.txt
-        - file:///app/lists/blocklists/gaming.txt
-      activation:
-        start: "20:00"
-        end: "10:00"
-      
-    # Free time: No blocking
-    free:
-      blockLists: []
+      - file:///app/lists/blocklists/social-media.txt
+      - file:///app/lists/blocklists/gaming.txt
+    free: []
 
-  # Default group when no time matches
-  defaultGroup: free
-  
-  # 10-second delay for social media
-  blockingTimeout: 10s
+  clientGroupsBlock:
+    default:
+      - free
+    192.168.0.0/16:
+      - work
+    10.0.0.0/8:
+      - night
 
-port: 53
-httpPort: 4000
+  blockTTL: 10s
 
-ratelimit: 15
+ports:
+  dns: 53
+  http: 4000
+
 queryLog:
   type: none
 
-logging:
+log:
   level: error

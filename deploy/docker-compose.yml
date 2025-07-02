@@ -5,7 +5,7 @@ services:
     container_name: focusguard
     restart: unless-stopped
     volumes:
-      - /opt/dns-focusguard/config/blocky-config.yaml:/app/config.yaml
+      - /opt/dns-focusguard/deploy/config/blocky-config.yaml:/app/config.yml
       - /opt/dns-focusguard/lists:/app/lists
     cap_add:
       - NET_ADMIN
