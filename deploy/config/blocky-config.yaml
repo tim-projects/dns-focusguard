@@ -26,6 +26,12 @@ blocking:
 ports:
   dns: 53
   http: 4000
+  tls: 853
+
+tls:
+  certFile: "/app/certs/fullchain.pem"
+  keyFile:  "/app/certs/privkey.pem"
+  minTlsServeVersion: "1.2"
 
 queryLog:
   type: none
